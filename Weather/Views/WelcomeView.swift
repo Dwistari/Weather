@@ -25,9 +25,9 @@ struct WelcomeView: View {
             
             VStack{
                 Text("Welcome to Weather App")
-                    .bold().font(.title)
+                    .bold().font(.title).foregroundColor(.black)
                 Text("Discover the weather in your city and plan your day corectly")
-                    .padding()
+                    .padding().foregroundColor(.black)
                 
                 LoadingButton(action: {
                     locationManager.requestLocation()

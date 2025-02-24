@@ -13,9 +13,17 @@ struct WeatherView: View {
 
     let weatherItems = [1, 2, 3, 4, 5]
     var status: String {
-        if ((weather.weather.first?.main.contains("Cloudy")) != nil) {
+        guard let forecastName = weather.weather.first?.main else { return "kosong" }
+        switch forecastName {
+        case "Rain":
+            return "day-rain"
+        case "Clouds":
             return "day-cloudy"
-        } else {
+        case "Wind":
+            return "day-wind"
+        case "Clear":
+            return "day-sun"
+        default:
             return "day-sun"
         }
         

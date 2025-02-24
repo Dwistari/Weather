@@ -41,6 +41,10 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.first?.coordinate
         isLoading = false
+        
+        print("lat", location?.latitude ?? 0.0)
+        print("long", location?.longitude ?? 0.0)
+
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
